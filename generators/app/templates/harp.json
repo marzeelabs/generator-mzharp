@@ -1,0 +1,14 @@
+{
+  "globals": {
+    "title": "<%= project %>",
+    "tagline": "<%= description %>",
+    "disqus": false,
+    "analytics": false,
+    "breakpoints": {
+      "small": 460,
+      "medium": 680,
+      "regular": 820,
+      "large": 1400
+    }
+  }
+}

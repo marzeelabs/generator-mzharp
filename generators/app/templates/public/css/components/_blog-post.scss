@@ -1,0 +1,59 @@
+.blog-post {
+  background: palette(white);
+  width: auto;
+  margin-top: ritmo(10);
+}
+
+.blog-post__cover {
+  height: ritmo(60);
+  padding-top: ritmo(20);
+}
+
+.blog-post__title, .blog-post__subtitle {
+  color: palette(white);
+  text-align: center;
+  font-weight: 300;
+  vertical-align: middle;
+}
+
+
+.blog-post__content-wrapper {
+  padding: ritmo(10);
+  @include container(1000px);
+
+  img {
+    display: block;
+    margin: ritmo(3) auto;
+  }
+
+  pre {
+    overflow-x: scroll;
+    width: 100%;
+    background: palette(grey, xx-light);
+    padding: ritmo();
+  }
+
+  // @todo organize these components in another file
+  .image-left {
+    @include mq($from: break-large) {
+      float: left;
+      width: 46%;
+      margin-right: 4%;
+    }
+  }
+
+  .image-right {
+    @include mq($from: break-large) {
+      float: right;
+      width: 46%;
+      margin-left: 4%;
+    }
+  }
+
+  .non-responsive {
+    @include mq($from: break-large) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

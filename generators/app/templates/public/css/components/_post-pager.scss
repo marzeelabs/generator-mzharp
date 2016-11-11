@@ -1,0 +1,14 @@
+.post-pager__wrapper {
+  padding: ritmo(5) 0;
+  @include container(1000px);
+  border-top: 1px solid palette(grey, x-light);
+}
+
+.post-pager li.previous a, .post-pager li.next a {
+  color: palette(mzharp, mid-dark);
+  transition: color ease 0.5s;
+
+  &:hover {
+    color: palette(mzharp, x-dark);
+  }
+}

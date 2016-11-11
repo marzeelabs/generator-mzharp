@@ -1,0 +1,21 @@
+.footer {
+  @extend .section-green-commons;
+  padding: ritmo(6) 20px ritmo(2) 20px;
+
+  p {
+
+    @include mq($until: break-medium-small) {
+      @include ritmo-font-size(14px);
+    }
+  }
+
+  a {
+    font-weight: 700;
+    color: white;
+    transition: background ease 0.5s;
+
+    &:hover {
+      background: palette(mzharp, dark);
+    }
+  }
+}
