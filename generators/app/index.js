@@ -80,6 +80,10 @@ module.exports = yeoman.Base.extend({
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
     );
+    this.fs.copy(
+      this.templatePath('_travis.yml'),
+      this.destinationPath('.travis.yml')
+    );
     this.fs.copyTpl(
       this.templatePath('Procfile'),
       this.destinationPath('Procfile'),
