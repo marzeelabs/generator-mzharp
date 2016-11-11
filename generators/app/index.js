@@ -61,24 +61,25 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('README.md'),
       params
     );
-
     this.fs.copyTpl(
       this.templatePath('_gulpfile.js'),
       this.destinationPath('gulpfile.js'),
       params
     );
-
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath('package.json'),
       params
     );
-
+    this.fs.copyTpl(
+      this.templatePath('harp.json'),
+      this.destinationPath('harp.json'),
+      params
+    );
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
     );
-
     this.fs.copy(
       this.templatePath('public'),
       this.destinationPath('public')
@@ -88,7 +89,6 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('public/_data.json'),
       params
     );
-
     this.fs.copy(
       this.templatePath('scripts'),
       this.destinationPath('scripts')
