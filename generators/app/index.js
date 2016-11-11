@@ -80,6 +80,11 @@ module.exports = yeoman.Base.extend({
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
     );
+    this.fs.copyTpl(
+      this.templatePath('Procfile'),
+      this.destinationPath('Procfile'),
+      params
+    );
     this.fs.copy(
       this.templatePath('public'),
       this.destinationPath('public')
