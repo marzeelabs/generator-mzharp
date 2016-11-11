@@ -21,6 +21,7 @@ module.exports = yeoman.Base.extend({
       type: 'input',
       name: 'description',
       message: 'Your project description',
+      default: 'The project description'
     },
     {
       type: 'input',
