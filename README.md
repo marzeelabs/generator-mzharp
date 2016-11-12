@@ -10,14 +10,16 @@ npm install -g yo
 npm install -g generator-mzharp
 ```
 
-Then generate your new project:
+Then generate your new project (`my-mzharp`):
 
 ```bash
+mkdir my-mzharp
+cd my-mzharp
 yo mzharp
 ```
 ## License
 
-MIT © [Peter Vanhee](http://marzeelabs.org)
+MIT © [Peter Vanhee | Marzee Labs](http://marzeelabs.org)
 
 
 [npm-image]: https://badge.fury.io/js/generator-mzharp.svg
