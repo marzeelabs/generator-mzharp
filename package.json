@@ -1,12 +1,12 @@
 {
   "name": "generator-mzharp",
   "version": "0.0.0",
-  "description": "Generator for an MZ HarpJS static site",
+  "description": "Yeoman generator for an MZ HarpJS site",
   "homepage": "https://github.com/marzeelabs/generator-mzharp",
   "author": {
     "name": "Peter Vanhee",
     "email": "peter@marzeelabs.org",
-    "url": "http://marzeelabs.org"
+    "url": "http://github.com/pvhee"
   },
   "files": [
     "generators"
@@ -46,7 +46,6 @@
   },
   "repository": "marzeelabs/generator-mzharp",
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT"
