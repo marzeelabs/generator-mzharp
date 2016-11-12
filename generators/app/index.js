@@ -110,7 +110,7 @@ module.exports = yeoman.Base.extend({
       { "src": "scripts/deploy.sh" },
       { "src": "Procfile", "when": this.heroku },
       { "src": "_travis.yml", "dest": ".travis.yml", "when": this.travis },
-      { "src": "public/CNAME", "when": typeof this.props.cname === 'string' },
+      { "src": "CNAME", "when": typeof this.props.cname === 'string' },
     ];
 
     // Copy directories without templating
