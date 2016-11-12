@@ -40,7 +40,7 @@ then
 
   echo "Pushing new content to $ORIGIN_URL"
   git config user.name "Travis CI" || exit 1
-  git config user.email "travis@marzeelabs.org" || exit 1
+  git config user.email "travis@travis-ci.org" || exit 1
 
   git add -A . || exit 1
   git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT" || exit 1
