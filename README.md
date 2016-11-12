@@ -1,5 +1,5 @@
 # generator-mzharp [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
-> Generator for an MZ HarpJS static site
+> Generator for an MZ [HarpJS](https://harpjs.com/) static site
 
 ## Installation
 
@@ -10,16 +10,26 @@ npm install -g yo
 npm install -g generator-mzharp
 ```
 
-Then generate your new project (`my-mzharp`):
+Then, create a directory to put your scaffolded files in
 
 ```bash
 mkdir my-mzharp
 cd my-mzharp
+```
+
+Finally, generate your new project
+
+```bash
 yo mzharp
 ```
+
+## Example
+
+Check out an [example MZ Harp site](http://mzharp.marzeelabs.org) and the [scaffolded GitHub repository](https://github.com/marzeelabs/mzharp).
+
 ## License
 
-MIT © [Peter Vanhee | Marzee Labs](http://marzeelabs.org)
+MIT © [Marzee Labs](http://marzeelabs.org)
 
 
 [npm-image]: https://badge.fury.io/js/generator-mzharp.svg
