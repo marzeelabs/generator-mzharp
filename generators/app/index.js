@@ -15,7 +15,7 @@ module.exports = yeoman.Base.extend({
       {
         type: 'input',
         name: 'project',
-        message: 'Your project machine name',
+        message: 'Your project machine name (this will also be your GitHub repository name)',
         default: path.basename(process.cwd()) // Default to current folder name
       },
       {
@@ -26,8 +26,9 @@ module.exports = yeoman.Base.extend({
       },
       {
         type: 'input',
-        name: 'github',
-        message: 'Your GitHub repository name (something like marzeelabs/repo-name)',
+        name: 'github_account',
+        message: 'Your GitHub owner name (your user account or organisation account)',
+        default: 'marzeelabs'
       },
       {
         type: 'confirm',
@@ -91,7 +92,8 @@ module.exports = yeoman.Base.extend({
     var params = {
       project: this.props.project,
       description: this.props.description,
-      github: this.props.github,
+      github_account: this.props.github_account,
+      github: this.props.github_account + '/' + this.props.project,
       heroku: this.props.heroku,
       travis: this.props.travis,
       travis_to_github: this.props.travis_to_github,
@@ -146,9 +148,9 @@ module.exports = yeoman.Base.extend({
 
     this.log(chalk.blue.bold('We suggest you run these commands in a different window so you can follow the help instructions here!'));
 
-    this.log(chalk.green.bold.underline('Set up your GitHub repository:'));
+    this.log("\n" + chalk.green.bold.underline('Set up your GitHub repository:'));
     this.log(chalk.red.bold('git init && git add -A && git commit -m "Initial commit"') + ': make your first commit');
-    this.log(chalk.red.bold('git remote add origin ...') + ': add a GitHub remote');
+    this.log(chalk.red.bold('git remote add origin ' + this._formatGitHub(this.props.github_account, this.props.project)) + ': add a GitHub remote');
     this.log(chalk.red.bold('git push origin master') + ': push your changes to GitHub');
 
     if (this.props.heroku) {
@@ -170,13 +172,17 @@ module.exports = yeoman.Base.extend({
     if (this.props.travis_to_github) {
       this.log("\n" + chalk.green.bold.underline('Travis CI deploying to GitHub pages:'));
       this.log('Setup custom domain to GitHub Pages: ' + chalk.blue.bold.underline('https://help.github.com/articles/using-a-custom-domain-with-github-pages/'));
-      this.log("\n" + 'Every time you push to ' + chalk.gray.bold(this.props.deploy_from) + ', Travis CI will autmatically build your app and push this to ' + chalk.gray.bold(this.props.deploy_to) + ', which will be picked up by GitHub pages.');
+      this.log('Add an encrypted deployment key to this repository: ' + chalk.blue.bold.underline('https://github.com/marzeelabs/generator-mzharp/tree/master/generators/app/templates#reviewing-and-hosting'));
+      this.log('Every time you push to ' + chalk.gray.bold(this.props.deploy_from) + ', Travis CI will automatically build your app and push to ' + chalk.gray.bold(this.props.deploy_to) + ', which will be picked up by GitHub pages.');
       this.log('Your app will be accessible at ' + chalk.blue.bold.underline(this.props.cname));
-      this.log(chalk.red.bold('travis enable') + ': enable travis integration.')
     }
 
     this.log("\n" + chalk.green.bold.underline('Commands for local development:'));
     this.log(chalk.red.bold('gulp') + ': you can preview your project in ' + chalk.blue.bold.underline('localhost:3330'));
     this.log(chalk.red.bold('gulp build') + ': build your Harp project manually');
+  },
+
+  _formatGitHub: function (account, repo) {
+    return 'https://github.com/' + account + '/' + repo + '.git'
   }
 });
