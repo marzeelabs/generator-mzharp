@@ -6,10 +6,10 @@ Boilerplate for [Harp](http://harpjs.com) with Gulp support, responsive images a
 
 ## Setup
 
-1. Setup boilerplate: `harp init my-harp --boilerplate marzeelabs/mz-harp`
+1. Setup boilerplate using [Yeoman](http://yeoman.io): `yo mzharp` (see full documentation at [Generator MZ Harp](https://github.com/marzeelabs/generator-mzharp))
 2. Navigate inside the new directory with `cd my-harp`
-3. Install all dependencies with `npm install`
-4. Install gulp and harp globally with `npm install -g gulp harp` so you get the CLIs available
+3. Install all dependencies with `npm install`. This is handled by the Yeoman generator.
+4. (optional) install gulp and harp globally with `npm install -g gulp harp` so you get the CLIs available. Alternatively, these packages are also defined as local dependencies.
 
 This will get you a copy of the repository locally and also download all node dependencies such as [harp](http://harpjs.com/), [Gulp](http://gulpjs.com/), [jimp](https://github.com/oliver-moran/jimp), [Browsersync](https://www.browsersync.io/), etc.
 
@@ -40,12 +40,12 @@ Travis is also setup to automatically build the website and deploy the static fi
 
 1. Install the Travis CLI tool with `gem install travis`.
 2. Log in to Travis with `travis login`.
-3. Create a new RSA key with `ssh-keygen -t rsa -C "Deploy key for <repo>" -f deploy_key` (don't use a passphrase!).
+3. Create a new RSA key with `ssh-keygen -t rsa -C "Deploy key for <%= project %>" -f deploy_key` (don't use a passphrase!).
 4. Put the contents of the generated file **deploy_key.pub** into https://github.com/<username>/<repository>/settings/keys as new deploy key with write access. You can delete this file, you won't need it anymore.
 5. Use the Travis CLI to encrypt your file with `travis encrypt-file deploy_key --add`. The *add* option should automatically update your .travis.yml file with a line starting with "openssl aes-256" in the "before_install" section.
 6. Delete the previously generated **deploy_key** file - do not commit it to the repository! The only file you must commit is the encrypted file **deploy_key.enc**.
-7. Configure the *DEPLOY_FROM* and *DEPLOY_TO* branches in **scripts/deploy.sh** and the git username and email you want to show up in the deploy commits.
-8. When a PR is successfully merged to the **DEPLOY_FROM** branch you chose, Travis will build the website and commit the result to your chosen **DEPLOY_TO** branch. Don't forget that Travis must be set up to build PRs AND pushes.
+7. Configure the *DEPLOY_FROM* and *DEPLOY_TO* branches in **scripts/deploy.sh** and the git username and email you want to show up in the deploy commits (this is handled automatically when you use the Yeoman generator).
+8. When a PR is successfully merged to the **DEPLOY_FROM** branch you chose, Travis will build the website and commit the result to your chosen **DEPLOY_TO** branch. Don't forget that Travis must be set up to build PRs AND pushes (this is handled automatically when you use the Yeoman generator).
 
 ## Credits
 
