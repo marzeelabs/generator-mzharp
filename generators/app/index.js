@@ -172,7 +172,7 @@ module.exports = yeoman.Base.extend({
     if (this.props.travis_to_github) {
       this.log("\n" + chalk.green.bold.underline('Travis CI deploying to GitHub pages:'));
       this.log('Setup custom domain to GitHub Pages: ' + chalk.blue.bold.underline('https://help.github.com/articles/using-a-custom-domain-with-github-pages/'));
-      this.log('Add an encrypted deployment key to this repository: ' + chalk.blue.bold.underline('https://github.com/marzeelabs/generator-mzharp/tree/master/generators/app/templates#reviewing-and-hosting'));
+      this.log('Add an encrypted deployment key to your ' + this.props.project + 'repository, following these instructions: ' + chalk.blue.bold.underline('https://github.com/marzeelabs/generator-mzharp/tree/master/generators/app/templates#reviewing-and-hosting'));
       this.log('Every time you push to ' + chalk.gray.bold(this.props.deploy_from) + ', Travis CI will automatically build your app and push to ' + chalk.gray.bold(this.props.deploy_to) + ', which will be picked up by GitHub pages.');
       this.log('Your app will be accessible at ' + chalk.blue.bold.underline(this.props.cname));
     }
