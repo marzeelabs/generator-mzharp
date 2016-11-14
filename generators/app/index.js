@@ -149,6 +149,7 @@ module.exports = yeoman.Base.extend({
     this.log(chalk.blue.bold('We suggest you run these commands in a different window so you can follow the help instructions here!'));
 
     this.log("\n" + chalk.green.bold.underline('Set up your GitHub repository:'));
+    this.log('Start by creating a new repository on Github by accessing: ' + chalk.blue.bold.underline('https://github.com/new'));
     this.log(chalk.red.bold('git init && git add -A && git commit -m "Initial commit"') + ': make your first commit');
     this.log(chalk.red.bold('git remote add origin ' + this._formatGitHub(this.props.github_account, this.props.project)) + ': add a GitHub remote');
     this.log(chalk.red.bold('git push origin master') + ': push your changes to GitHub');
