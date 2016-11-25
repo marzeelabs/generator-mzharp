@@ -6,7 +6,7 @@
   "license": "GPLv3",
   "scripts": {
     "deploy": "./scripts/deploy.sh",
-    "heroku-prebuild": "gulp build"
+    "heroku-postbuild": "gulp build"
   },
   "dependencies": {
     "browser-sync": "^2.11.1",
