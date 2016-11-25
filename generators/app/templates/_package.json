@@ -5,7 +5,8 @@
   "author": "Marzee Labs <info@marzeelabs.org>",
   "license": "GPLv3",
   "scripts": {
-    "deploy": "./scripts/deploy.sh"
+    "deploy": "./scripts/deploy.sh",
+    "heroku-prebuild": "gulp build"
   },
   "dependencies": {
     "browser-sync": "^2.11.1",
