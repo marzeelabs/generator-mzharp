@@ -1,3 +1,4 @@
+public/images/posts/*
 _site/*
 node_modules
 npm-debug.log
