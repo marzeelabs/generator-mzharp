@@ -1,0 +1,13 @@
+//- Add target="_blank" for external links on blog posts.
+//- Enhances all occurences of external <a> by adding a target attribute.
+//-
+//- Uses the yield variable
+
+- var postLinks = yield.match(/(?:{.+?})?<a(.+?)>/gi) || '';
+
+each postTargetedLink, postLinkIndex in postLinks
+  - var postLinkHref = postTargetedLink.match(/(?:href=["'])(.+?)(?:["'])/)[1];
+  //- Cover both relative paths and absolute paths on production
+  if postLinkHref.lastIndexOf('http', 0) === 0 && postLinkHref.lastIndexOf(production_url) !== 0
+    - postTargetedLink = postTargetedLink.replace(/(\s)?>/, ' target="_blank">');
+    - yield = yield.replace(postLinks[postLinkIndex], postTargetedLink);
